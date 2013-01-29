@@ -1,0 +1,121 @@
+//
+//public class test {
+//
+//  public static void main(String[] args) {
+//		String src = "lkdjaflasjf";
+//		char[] s = src.toCharArray();
+//		int len = src.length();
+//		int llen = s.length;
+//		System.out.println(len);
+//		System.out.println(llen);
+//		
+////		char a = 'a';
+//		Boolean[] flags = new Boolean[128];
+////		flags[a] = true;
+////		System.out.println((int)a);
+//		for(int j = 0; j<llen; j++){
+//			flags[s[j]]=true;
+//		}
+//		
+//		for(int i = 0; i <128; i++){
+//			System.out.println(flags[i]);
+//		}
+////		System.out.println(flags[]);
+//
+//	}
+//
+//}
+
+/*
+public class test{
+	
+	    public static String deleteChar(String str, String remove){
+//	    String str = "alskdfjlasdkfapuyzsv";
+//	    String remove = "lskdj";
+		char s[] = str.toCharArray();
+		char d[] = remove.toCharArray();
+//		Boolean flags[]= new Boolean[128];
+//		boolean flags[]= new boolean[128];  这种和下面那种都可以
+		boolean[] flags = new boolean[128];
+		int src, dst;
+		//如果用 Boolean flags[]= new Boolean[128];    要把flags[]初始化, 要不会有exception, 这里是函数的一个变量, 不初始化不能用的, 
+//		for(dst = 0; dst < 128; dst++){
+//			flags[dst] = false;
+//			
+//		}
+		System.out.println(flags[4]);
+		for(src = 0; src < d.length ;src++){
+			flags[d[src]]= true;
+		}
+		src = 0;
+		dst = 0;
+//		for(src=0; src<s.length ;src++){
+//			while(!flags[s[src]]){
+//				for(dst=0;dst<s.length ; dst++){
+//					
+//				}
+//			}
+//		}
+		
+		while(src < s.length ){
+			if(!flags[(int)s[src]]){
+				s[dst++] = s[src];
+			}
+			++src;
+		}
+		return new String(s,0,dst);
+//	String result = new String(s,0,dst);
+//		System.out.println(result);
+		
+	}
+	
+	public static void main(String[] args){
+		String a = "welcom to china";
+		String b = "acetz";
+		String result = new String();
+		result = deleteChar(a,b);
+		System.out.println(result);
+		
+	}
+}
+
+*/
+
+
+
+
+public class Test{
+	
+	static String deleteChar(String str, String remove){
+		char[] a = str.toCharArray();
+		char[] b = remove.toCharArray();
+		boolean[] flags = new boolean[128];
+		int src, dst;
+		
+		for(src=0; src<b.length ;src++){
+			flags[b[src]] = true;
+		}
+		
+		src = 0;
+		dst = 0;
+		
+		while(src<a.length ){
+			
+			if(!flags[a[src]]){
+				a[dst++] = a[src];
+			}
+			src++;
+		}
+		return new String(a, 0, dst);
+	}
+	
+	public static void main(String[] args){
+		String s = "lasjf;lkjaf  owoeiurqr";
+		String ss = "lkjasd";
+		System.out.println(deleteChar(s,ss));
+		
+		
+	}
+	
+	
+}
