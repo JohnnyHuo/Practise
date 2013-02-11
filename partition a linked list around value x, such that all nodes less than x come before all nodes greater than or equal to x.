@@ -1,0 +1,29 @@
+public LinkedListNode partition(LinkedListNode node, int x){
+  LinkedListNode beforeStart = null;
+  LinkedListNode afterStart = null;
+  
+  while(node.next != null){
+    LinkedListNode next = node.next;
+    if(node.data < x){
+      // insert the nodes to the front of them
+      node.next = beforeStart;  
+      beforeStart = node;
+    }else{
+        node.next = afterStart;
+        afterStart = node;
+      }
+    node = next;
+  }
+  
+  if(beforeStart == null){
+    return afterStart;
+  }
+  
+  /* get the end of before list and merge the two lists*/
+  LinkedListNode head = beforeStart;
+  while(beforeStart.next != null){
+    beforeStart = beforeStart.next;
+  }
+  beforeStart.next = afterStart;
+  return head;
+}
