@@ -2,7 +2,8 @@ public LinkedListNode partition(LinkedListNode node, int x){
   LinkedListNode beforeStart = null;
   LinkedListNode afterStart = null;
   
-  while(node.next != null){
+  //while(node.next != null){
+    while(node != null){
     LinkedListNode next = node.next;
     if(node.data < x){
       // insert the nodes to the front of them
@@ -11,7 +12,7 @@ public LinkedListNode partition(LinkedListNode node, int x){
     }else{
         node.next = afterStart;
         afterStart = node;
-      }
+    }
     node = next;
   }
   
