@@ -25,7 +25,7 @@ public static int getHeight(TreeNode root){
 	if (getHeight(root.right) == -1) return -1;
 	
 	int heightDiff = getHeight(root.left) - getHeight(root.right);
-	if(heightDiff > 1){
+	if(Math.abs(heightDiff) > 1){
 		return -1;
 	}else{
 		return Math.max(getHeight(root.left), getHeight(root.right)) + 1;
