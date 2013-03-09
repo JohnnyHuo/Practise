@@ -1,0 +1,21 @@
+// check if string is palindrome
+// ReadLine:
+// BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+// String read = in.readLine();
+
+
+boolean checkPalindrome(String str){
+  int index, l;
+  char ch;
+  String dst = "";
+  l = str.length;
+  for (index = l; index >= 0; index -- ){
+    ch = str.charAt(index);
+    dst += ch;
+  }
+  if (str.equals(dst)){
+    return true;
+  }else{
+    return false;
+  }
+}
