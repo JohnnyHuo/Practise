@@ -1,6 +1,6 @@
 String insertChar(String str, char ch, int i){
-  String firstHalf = str.subString(0, i);
-  String secondHalf = str.subString(i);
+  String firstHalf = str.substring(0, i);
+  String secondHalf = str.substring(i);
   String result = firstHalf + ch + secondHalf;
   return result;
 }
@@ -15,14 +15,14 @@ ArrayList<String> getAllPerms(String str){
   }
   
   //base case
-  if (str.length == 0){
+  if (str.length() == 0){
     permutations.add("");
     return permutations;
   }
 
   char first = str.charAt(0);
-  String remainder = str.subString(1);
-  ArrayList<string> words = getAllPerms(remainder);
+  String remainder = str.substring(1);
+  ArrayList<String> words = getAllPerms(remainder);
   for(String word : words){
     for(int index = 0; index <= word.length(); index++){
       permutations.add(insertChar(word, first, index));
