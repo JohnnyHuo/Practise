@@ -22,3 +22,6 @@ class FindPrimNums{
     }
   }
 }
+
+
+//..........result is 2500.................WRONG
