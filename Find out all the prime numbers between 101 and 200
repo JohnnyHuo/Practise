@@ -25,3 +25,4 @@ class FindPrimNums{
 
 
 //..........result is 2500.................WRONG
+//没错的, 运行的时候eclipse有点问题, run了之前的程序
