@@ -1,0 +1,12 @@
+public ListNode reverse(ListNode l){
+  if(l == null || l.next == null) return l;
+  ListNode remainingReverse = reverse(l.next);
+  ListNode cur = remainingReverse;
+  while(cur.next != null){
+    cur = cur.next;
+  }
+  // now it's the tail of the LinkedList
+  cur.next = l;
+  l.next = null;
+  return remainingReverse;
+}
