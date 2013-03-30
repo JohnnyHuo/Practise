@@ -1,3 +1,4 @@
+/*
 public ListNode reverse(ListNode l){
   if(l == null || l.next == null) return l;
   ListNode remainingReverse = reverse(l.next);
@@ -9,4 +10,14 @@ public ListNode reverse(ListNode l){
   cur.next = l;
   l.next = null;
   return remainingReverse;
+}
+*/
+
+//******************************************************************这种做法更好
+public static List reverse(List l){
+	if(l == null || l.next == null)		return l;
+	List remainingReverse = reverse(l.next);
+	l.next.next = l;	//注意各个node之间的指向, 比如 l2.next是l3, 而reverse(l3)之后l3.next==null;也就是说l3就是当时的tail了.	巧妙!			
+	l.next = null;
+	return remainingReverse;
 }
