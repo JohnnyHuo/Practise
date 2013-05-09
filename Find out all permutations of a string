@@ -1,3 +1,24 @@
+/*
+String.subString()
+Syntax:
+Here is the syntax of this method:
+
+public String substring(int beginIndex)
+
+or
+
+public String substring(int beginIndex, int endIndex)
+Parameters:
+Here is the detail of parameters:
+
+beginIndex -- the begin index, inclusive.
+
+endIndex -- the end index, exclusive.
+
+
+*/
+
+
 String insertChar(String str, char ch, int i){
   String firstHalf = str.substring(0, i);
   String secondHalf = str.substring(i);
